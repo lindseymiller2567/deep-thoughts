@@ -24,15 +24,17 @@ const Home = () => {
 
   return (
     <main>
-      <div className='flex-row justify-space-between'>
-        <div className={`col-12 mb-3 ${loggedIn && 'col-log-8'}`}>
+      <div className="flex-row justify-space-between">
+        <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList thoughts={thoughts} title="some Feed for Thought(s)..." />
+            <ThoughtList
+              thoughts={thoughts}
+              title="Some Feed for Thought(s)..."
+            />
           )}
         </div>
-        {/* if value of loggedIn is true and there is data in the userData variable then display friend list or do nothing*/}
         {loggedIn && userData ? (
           <div className="col-12 col-lg-3 mb-3">
             <FriendList

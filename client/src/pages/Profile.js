@@ -1,5 +1,4 @@
 import React from 'react';
-import Auth from '../utils/auth';
 
 // useParams Hook retrieves the username from the URL, which is then passed into the useQuery Hook
 import { Redirect, useParams } from 'react-router-dom';
@@ -10,8 +9,9 @@ import FriendList from '../components/FriendList';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 
-const Profile = () => {
+const Profile = (props) => {
 
   const { username: userParam } = useParams();
 
